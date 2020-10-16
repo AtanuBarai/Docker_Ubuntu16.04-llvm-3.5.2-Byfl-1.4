@@ -1,0 +1,12 @@
+TO BUILD:
+
+sudo docker build . -f Dockerfile -t byfl-orig:xenial
+
+TO RUN(preferred way to run):
+sudo docker run -it --rm --mount type=bind,source=/home/atanu/Work,target=/workspace byfl-orig:xenial
+
+# This will bind the /workspace directory in ubuntu docker with /home/atanu/Work. All modifications inside /workspace directory will be persistant.
+
+
+TO RUN with default volume in location /var/lib/docker/ (not preferred)
+sudo docker run -it --rm --mount source=byfl-workspace,target=/workspace byfl:xenial
